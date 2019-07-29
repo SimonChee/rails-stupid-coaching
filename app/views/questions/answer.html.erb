@@ -1,0 +1,27 @@
+<h1>SILLY COACHING</h1>
+
+<p>Your message:</p>
+<div class="quote">
+  <%= @question = params[:question] %>
+  <br>
+  <br>
+</div>
+
+<p>The reply from Coach is: </p>
+<div class="quote answer">
+  <% @question = params[:question] %>
+  <% if @question.downcase == "i am going to work right now!" %>
+    Great!
+
+  <% elsif @question.end_with?("?") %> 
+    Silly question, get dressed and go to work!
+  
+  <% else %>
+    I don't care, get dressed and go to work!
+ </div>
+
+<% end %>
+
+<br>
+  <%= link_to "Ask a new question", ask_path %>
+
